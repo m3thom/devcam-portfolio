@@ -2,7 +2,7 @@
 
 <%= link_to 'New port', new_portfolio_url %>
 <% @portfolio_items.each do |port_i| %>
-  <p><%= link_to port_i.title, portfolio_path(port_i) %><p>
+  <p><%= link_to port_i.title, portfolio_show_path(port_i) %><p>
   <%= image_tag port_i.thumb_image unless port_i.thumb_image.nil?  %>  
 <%= link_to 'Edit', edit_portfolio_path(port_i) %>
 <%= link_to 'Destroy port', portfolio_path(port_i), method: :delete, data: { confirm: 'Are you sure?' } %>
