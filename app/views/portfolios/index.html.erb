@@ -2,6 +2,6 @@
 
 <% @portfolio_items.each do |port_i| %>
   <p><%= port_i.title %><p>
-  <%= image_tag port_i.thumb_image %>
-  
+  <%= image_tag port_i.thumb_image unless port_i.thumb_image.nil?  %>  
+
 <% end %>
