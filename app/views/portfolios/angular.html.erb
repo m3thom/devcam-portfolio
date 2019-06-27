@@ -1,0 +1,4 @@
+<h1><%= @portfolio_angular_items.title %></h1>
+
+<%= image_tag @portfolio_angular_items.main_image unless @portfolio_angular_items.main_image.nil?  %> 
+<%= link_to 'Edit', edit_portfolio_path(@portfolio_angular_items.id) %>
