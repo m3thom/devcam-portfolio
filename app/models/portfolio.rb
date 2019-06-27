@@ -1,4 +1,6 @@
 class Portfolio < ApplicationRecord
+    include Placeholder
+
     validates_presence_of :title, :thumb_image, :main_image
 
     def self.angular
@@ -12,7 +14,7 @@ class Portfolio < ApplicationRecord
     after_initialize :set_defaults
 
     def set_defaults
-        self.main_image ||= "https://via.placeholder.com/600/09f/fff.png"
-        self.thumb_image ||= "https://via.placeholder.com/300/09f/fff.png"
+        self.main_image ||= Placeholder.image_generator(height: 600, width: 600)
+        self.thumb_image ||= Placeholder.image_generator(height: 300, width: 300)
     end
 end
