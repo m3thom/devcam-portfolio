@@ -20,6 +20,9 @@
       <%= link_to 'Register', new_user_registration_path %>
     <% end %>
 
+    <% if session[:source] %>
+         <p> Thanks for visit me from <%= session[:source] %> </p>
+    <% end %>
 
     <%= yield %>
   </body>
