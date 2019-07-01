@@ -2,9 +2,15 @@ module CurrentUserConcern
     extend ActiveSupport::Concern
 
     def current_user
-        super || geust_user
+        super || guest_user
     end
-    def geust_user
-        OpenStruct.new(name: "Anonimouse", first_name: "An", last_name: "no", email: "na@no.com")
+    def guest_user
+        guest = GuestUser.new
+        guest.name = "Guest User"
+        guest.first_name = "Guest"
+        guest.last_name = "User"
+        guest.email = "guest@mail.com"
+        guest
     end
+    
 end
