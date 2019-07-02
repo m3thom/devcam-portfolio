@@ -1,6 +1,7 @@
 class Portfolio < ApplicationRecord
     has_many :technologies
     accepts_nested_attributes_for   :technologies, 
+                                    allow_destroy: true,
                                     reject_if: lambda { |atts| atts['name'].blank?} #dont let this in if it's blank.
 
     include Placeholder
