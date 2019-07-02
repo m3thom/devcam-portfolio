@@ -15,6 +15,10 @@ class Portfolio < ApplicationRecord
     #can be user the same as above class
     scope :ruby_on_rails_portfolio_items, -> {  where(subtile: "Ruby on Rails")}
 
+    def self.by_position
+        order("position ASC")
+    end
+
     after_initialize :set_defaults
 
     def set_defaults
