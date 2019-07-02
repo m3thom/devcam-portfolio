@@ -5,7 +5,11 @@ class BlogsController < ApplicationController
   # GET /blogs
   # GET /blogs.json
   def index
-    @blogs = Blog.all
+    if logged_in?(:site_admin)
+      @blogs = Blog.all
+    else  
+      @blogs = Blog.recent.published
+    end
     @page_title = "Blog port"
   end
 
