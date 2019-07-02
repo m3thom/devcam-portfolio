@@ -60,3 +60,7 @@ gem 'devise', '~> 4.6', '>= 4.6.2'
 
 gem 'bootstrap', '~> 4.3.1'
 gem 'petergate', '~> 1.6', '>= 1.6.3'
+gem 'cocoon', '~> 1.2', '>= 1.2.9'
+
+#gem 'gritter', '~> 1.2'
+
