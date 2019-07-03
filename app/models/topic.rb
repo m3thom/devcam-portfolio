@@ -4,6 +4,6 @@ class Topic < ApplicationRecord
     has_many :blogs
 
     def self.with_blogs
-        includes(:blog).where.not(blogs: {id: nill})
+        includes(:blog).where.not(blogs: {id: nil})
     end
 end
